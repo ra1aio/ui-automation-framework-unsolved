@@ -33,3 +33,46 @@ Lines above are actually downloading .exe files for Selenium drivers dynamically
 NOTE: Add for now System.out.println("") lines of code on places where something crucial happens - e.g. driver successfully initialized (We will replace all of these with proper logging system later), put `//TODO: Change with log4j logger` comment.
 
 Test your implementation in temporary main class: initialize() should open Chrome or Firefox browser according to values in properties file mentioned with browser size from file also.
+
+
+# Создать реализацию WebDriverFactory.class
+
+Цель этого класса — предоставить удобные методы для настраиваемой инициализации WebDriver.
+
+* Создайте этот класс в новом пакете с именем selenium в папке main.java.
+* Открытые общедоступные методы:
+  * `инициализировать()`
+  * `конец()`
+  * `получить()`
+
+## Создайте класс перечисления браузера в пакете main.java.enums. Пока мы рассмотрим Chrome и Firefox.
+
+**`initialize()`** — инициализирует экземпляр WebDriver в соответствии с браузером (browser.name), который установлен в файле runConfiguration.properties. Создайте два приватных метода, которые возвращают объект WebDriver — createChromeDriver() и createFirefoxDriver(). Внутри этих двух методов вы создадите для начала соответствующие экземпляры ChromeDriver и FirefoxDriver.
+
+ПРИМЕЧАНИЕ. Здесь вы будете использовать зависимость **bonigarcia**.
+
+Если указана версия Selenium в файле конфигурации, используйте эту команду:
+
+`ChromeDriverManager.chromedriver().version (версия из файла runConfiguration.properties - selenium.version).setup();`
+
+Если не указана версия Selenium в файле конфигурации - пусть в методе будет это(будет взята последняя версия вебДрайвера):
+
+`ChromeDriverManager.chromedriver().setup();`
+
+Также используйте значения из файла runConfiguration.properties browser.width и browser.height, чтобы открыть браузер с заданным 
+размером окна.
+
+Строки выше фактически загружают файлы .exe для драйверов Selenium динамически.
+
+Некоторые полезные методы:
+
+**`end()`** - Выйти из текущего экземпляра WebDriver - закрыть браузер
+
+**`get()`** — просто вернет экземпляр WebDriver, который хранится как частная переменная класса.
+
+ПРИМЕЧАНИЕ. Пока что используйте System.out.println("") в местах, где происходит что-то важное, например, 'Драйвер успешно 
+инициализирован' (позже мы заменим все это системой логирования), и поместите комментарий после строки с выводом текста `//TODO: Change 
+with log4j logger`.
+
+Протестируйте свою реализацию во временном основном классе: initialize() должен открывать браузер Chrome или Firefox в соответствии со 
+значениями в файле свойств: размером браузера.

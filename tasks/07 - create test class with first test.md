@@ -22,3 +22,35 @@ Use JUnit annotations to create your first test. Also notice that selenium web d
 
 Run this test using maven run command - `mvn test`
 Make sure that test is stable.
+
+# Создаем тестовый класс с первым тестом
+
+Ваши тесты должны быть написаны в пакете test.java. Первый тест, который вы напишете, связан с тестированием функциональности поиска на 
+www.ae.com. Поэтому назовите свой тестовый класс: SearchTest.java
+
+Здесь мы будем использовать тест-раннер JUnit.
+
+В основном здесь вы научитесь работе с паттерном «builder» при реализации наших тестовых степов.
+
+Ваша первая реализация тестового метода должна выглядеть так:
+
+```java
+new OpenPagesSteps()
+        .openHomepage()
+        .acceptPrivacyModal()
+        .clickSearchButton()
+        .inputSearchTerm("0119_5091_851")
+        .clickSearchIcon()
+        .verifyNumberOfProductIsDisplayed(1)
+```
+
+Используйте аннотации JUnit, чтобы создать свой первый тест. Также обратите внимание, что экземпляр веб-драйвера selenium передается объектам страницы в методе `getDriver()` из MyPageFactory.class.
+Одно из TODO попросило вас использовать метод `WebDriverFactory.get()`, однако он вернул вам значение null, потому что Вы не вызывали 
+метод `initialize()`. Таким образом, кроме использования аннотации `@Test` в вашем тестовом классе вам необходимо реализовать так 
+называемые precondition and postcondition actions - см. [@Before vs @BeforeClass vs @BeforeEach vs @BeforeAll](https://www.baeldung.com/junit -до-докласса-докаждого-прежде). 
+Чего мы хотим добиться, так это того, что перед каждым тестом мы вызываем метод WebDriverFactory `initialize()`, 
+который будет открывать новую сессию браузера, и после каждого теста мы будем вызывать метод `end()` WebDriverFactory, который закроет окно браузера. 
+Реализуйте это.
+
+Запустите этот тест, используя команду запуска maven — `mvn test` или же средва запуска IntelliJ IDEA
+Убедитесь, что тест стабилен.

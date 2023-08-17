@@ -43,3 +43,65 @@ In SearchSteps.class implement methods:
 When you have performed search using product ID you are presented with search results page. Here you need to verify that only one product is present - use JUnit assertions you have already encountered them in Unit testing part. Step method should have signature:
 
 `public SearchSteps verifyNumberOfProductIsDisplayed(int numProducts);`
+
+# Создаем тестовые степы
+
+Одна из важных вещей, о которой следует помнить при создании автоматизированных тестов и разработке фреймворков тестирования: необходимо 
+разделять смоделированные страницы тестируемого приложения и шаги тестов, чтобы повысить масштабируемость кода, удобство 
+сопровождения и читаемость.
+
+Таким образом, каждый набор степов, который вы создадите, вы поместите в соответствующий класс тестовых степов. Например потому что в 
+данном контексте мы будем выполнять действия только на домашней странице и выполнять поиск на ней же - поэтому Вы должны сначала создать 
+- OpenPageSteps.class - в нем будут шаги связанные с открытием страниц, 
+- HomePageSteps.class - Шаги связанные с действиями на главной странице, 
+- SearchSteps.class — шаги, связанные с функциями поиска — на боковой панели сайта, 
+- SearchResultsPageSteps.class — шаги, которые выполняются на странице результатов поиска.
+Поместите все вышеуказанные классы в пакет main.java.steps.
+
+Чтобы сделать наши тесты более читабельными, мы будем использовать упрощенный паттерн «builder» — каждый общедоступный метод класса шагов 
+будет возвращать this (экземпляр этого класса) — поэтому мы сможем «цеплять» вызовы шагов в наших тестах — это будет пояснено ниже.
+
+В OpenPageSteps.class реализация будет выглядеть примерно так:
+
+```java
+private static MyPageFactory pageFactory = MyPageFactoryProvider.getInstance();
+
+private HomePage homePage() { return pageFactory.on(HomePage.class); } //используем метод .on MyPageFactoryProvider
+
+public HomePageSteps openHomepage() {
+        homePage().open(/* Использовать значение главной страницы из файла .properties */);
+        return new HomePageSteps(); //так как домашняя страница открывается после открытия страницы, openHomepage() предоставит вам 
+        //доступ к HomePageSteps
+}
+```
+
+В HomePageSteps.class у вас должно быть:
+
+```java
+private static MyPageFactory pageFactory = MyPageFactoryProvider.getInstance();
+
+private HomePage homePage() { return pageFactory.on(HomePage.class); }
+
+public HomePageSteps acceptPrivacyModal() {
+        homePage().acceptPrivacyButton().waitUntil(displayed()).click()
+        return this;
+        }
+```
+
+Таким образом, шаг `acceptPrivacyModal()` ожидает отображения acceptPrivacyButton и щелкает по нему — первое, что вам нужно сделать, когда 
+открыта домашняя страница. Такой удобный способ исходит из депенденси html-elements.
+
+По заданному шаблону реализуйте метод `clickSearchButton()`. Учтите, что это - действие, осуществляемое со страницей поиска, а поэтому 
+должно быть имплементировано в соответствующем странице классе
+
+В SearchSteps.class реализуйте методы:
+
+* `inputSearchTerm(String term)` - ПОДСКАЗКА: используйте метод sendKeys из html-элементов. Метод должен осуществлять ввод текста в поле 
+  поиска
+* `clickSearchIcon()` - Нажатие на иконку лупы
+
+Когда вы выполнили поиск с использованием идентификатора продукта, вам будет представлена страница результатов поиска. Здесь вам нужно 
+убедиться, что присутствует только один продукт — используйте assertions JUnit, с которыми вы уже сталкивались в части модульного 
+тестирования. Метод для этого теста должен иметь сигнатуру:
+
+`public SearchSteps verifyNumberOfProductIsDisplayed (int numProducts);`
