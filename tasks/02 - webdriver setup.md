@@ -40,12 +40,12 @@ Test your implementation in temporary main class: initialize() should open Chrom
 Цель этого класса — предоставить удобные методы для настраиваемой инициализации WebDriver.
 
 * Создайте этот класс в новом пакете с именем selenium в папке main.java.
-* Открытые общедоступные методы:
-  * `инициализировать()`
-  * `конец()`
-  * `получить()`
+* Создайте следующие public методы:
+  * `initialize()`
+  * `end()`
+  * `get()`
 
-## Создайте класс перечисления браузера в пакете main.java.enums. Пока мы рассмотрим Chrome и Firefox.
+## Создайте 2 класса браузеров в пакете main.java.selenium. Пока мы рассмотрим Chrome и Firefox.
 
 **`initialize()`** — инициализирует экземпляр WebDriver в соответствии с браузером (browser.name), который установлен в файле runConfiguration.properties. Создайте два приватных метода, которые возвращают объект WebDriver — createChromeDriver() и createFirefoxDriver(). Внутри этих двух методов вы создадите для начала соответствующие экземпляры ChromeDriver и FirefoxDriver.
 
@@ -61,6 +61,9 @@ Test your implementation in temporary main class: initialize() should open Chrom
 
 Также используйте значения из файла runConfiguration.properties browser.width и browser.height, чтобы открыть браузер с заданным 
 размером окна.
+
+И задайте неявное ожидание при помощи webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(**Введите свое кол-во секунд
+(рекомендую 10)*));
 
 Строки выше фактически загружают файлы .exe для драйверов Selenium динамически.
 

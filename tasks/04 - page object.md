@@ -4,7 +4,6 @@ Html elements dependency enables us to map pages of application under test as in
 
 Take a look at following files:
 
-* htmlelements.ExtendedMyWebElement
 * htmlelements.ExtendedWebPage
 * htmlelements.MyWebElement
 * htmlelements.MyPageFactory
@@ -21,7 +20,6 @@ In the classes you will find a couple of TODO comments, implement them.
 
 Взгляните на следующие файлы:
 
-* htmlelements.ExtendedMyWebElement
 * htmlelements.ExtendedWebPage
 * htmlelements.MyWebElement
 * htmlelements.MyPageFactory

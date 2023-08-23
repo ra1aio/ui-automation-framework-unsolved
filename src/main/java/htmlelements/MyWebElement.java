@@ -1,11 +1,11 @@
 package htmlelements;
 
-import io.qameta.htmlelements.element.ExtendedWebElement;
+import org.openqa.selenium.WebElement;
 
 /**
- *  Here WebElement methods can be overridden or extended using htmlelements annotations.
+ *  Here WebElement methods can be overridden or extended
  *
  */
 
-public interface MyWebElement<FluentType> extends ExtendedWebElement<FluentType> {
+public interface MyWebElement extends WebElement {
 }

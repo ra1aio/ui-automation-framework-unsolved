@@ -9,13 +9,16 @@ Basically here you will see advantages of using simplified "builder" pattern in 
 Your first test method implementation should look like this:
 
 ```java
-new OpenPagesSteps()
-    .openHomepage()
-    .acceptPrivacyModal()
-    .clickSearchButton()
-    .inputSearchTerm("0119_5091_851")
-    .clickSearchIcon()
-    .verifyNumberOfProductIsDisplayed(1)
+@Test
+public void negativeTest(){
+        new OpenPagesSteps()
+        .openHomepage()
+        .acceptPrivacyModal()
+        .clickSearchButton()
+        .inputSearchTerm("0119_5091_851")
+        .clickSearchIcon()
+        .verifyNumberOfProductIsDisplayed(1)
+        }
 ```
 
 Use JUnit annotations to create your first test. Also notice that selenium web driver instance is getting passed to page objects in method `getDriver()` from MyPageFactory.class - Your TODO assignment asked you to use `WebDriverFactory.get()` method, it will return null to you because you have never actually called `initialize()` method. So other then using `@test` annotation in your test class you need to implement so called precondition and postcondition actions - see [@Before vs @BeforeClass vs @BeforeEach vs @BeforeAll](https://www.baeldung.com/junit-before-beforeclass-beforeeach-beforeall). What we want to achieve is that before every test we call WebDriverFactory `initialize()` method - that will open fresh session of browser and after every test we will call WebDriverFactory `end()` method - that will close browser window. Implement it.
@@ -35,17 +38,20 @@ www.ae.com. Поэтому назовите свой тестовый класс
 Ваша первая реализация тестового метода должна выглядеть так:
 
 ```java
-new OpenPagesSteps()
+@Test
+public void negativeTest(){
+        new OpenPagesSteps()
         .openHomepage()
         .acceptPrivacyModal()
         .clickSearchButton()
         .inputSearchTerm("0119_5091_851")
         .clickSearchIcon()
         .verifyNumberOfProductIsDisplayed(1)
+        }
 ```
 
 Используйте аннотации JUnit, чтобы создать свой первый тест. Также обратите внимание, что экземпляр веб-драйвера selenium передается объектам страницы в методе `getDriver()` из MyPageFactory.class.
-Одно из TODO попросило вас использовать метод `WebDriverFactory.get()`, однако он вернул вам значение null, потому что Вы не вызывали 
+Одно из TODO просило вас использовать метод `WebDriverFactory.get()`, однако он вернул вам значение null, потому что Вы не вызывали 
 метод `initialize()`. Таким образом, кроме использования аннотации `@Test` в вашем тестовом классе вам необходимо реализовать так 
 называемые precondition and postcondition actions - см. [@Before vs @BeforeClass vs @BeforeEach vs @BeforeAll](https://www.baeldung.com/junit -до-докласса-докаждого-прежде). 
 Чего мы хотим добиться, так это того, что перед каждым тестом мы вызываем метод WebDriverFactory `initialize()`, 

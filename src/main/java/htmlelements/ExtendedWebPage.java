@@ -1,22 +1,14 @@
 package htmlelements;
 
-import annotations.IsAtPageMethod;
-import io.qameta.htmlelements.WebPage;
 import org.hamcrest.Matcher;
 
 /**
- * HtmlElements is not supported for later Selenium versions after 3.10.0, 
- * this is a wrapper class to avoid issues.
+ * This is a wrapper class to avoid issues.
  * It can be also used for extending or overriding WebPage behavior
  */
-public interface ExtendedWebPage extends WebPage {
+public abstract class ExtendedWebPage {
 
-    @IsAtPageMethod
-    void isAtPage(Matcher<String> url);
-
-    @Override
-    default void isAt(Matcher<String> url) {
-        isAtPage(url);
+    void isAt(Matcher<String> url) {
+        isAt(url);
     }
-
 }
