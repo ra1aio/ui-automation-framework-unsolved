@@ -11,6 +11,7 @@ public class MyPageFactory {
     }
 
     public WebDriver getDriver() {
-        return null; //TODO: Here you need to pass WebDriver instance from WebDriverFactory.get();
+        return null; //TODO: Here you need to pass WebDriver instance from WebDriverFactory.get() (передайте здесь инстанс вебдрайвера
+        // при помощи WebDriverFactory.get());
     }
 }

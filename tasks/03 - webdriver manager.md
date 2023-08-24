@@ -13,7 +13,10 @@ See [WebDriverManager](https://github.com/bonigarcia/webdrivermanager/blob/maste
 Как упоминалось в предыдущих заданиях, используйте bonigarcia WebDriverManager для динамического извлечения WebDriver в классе каждого 
 браузера.
 
-Создайте класс WebDriverFactory в одном пакете с классами браузеров и создайте в нем метод initialize(String typeOfBrowser, String version),
+Реализуйте класс WebDriverFactory в одном пакете с классами браузеров и создайте в нем метод initialize(String typeOfBrowser, String 
+version),
 который будет инициализировать заданный браузер с необходимыми параметрами
 
 См. документацию [WebDriverManager](https://github.com/bonigarcia/webdrivermanager/blob/master/README.md).
+
+Напишите тесты, которые будут открывать браузер(опционально разные браузеры) с разными заданными параметрами

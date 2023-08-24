@@ -43,9 +43,10 @@ Test your implementation in temporary main class: initialize() should open Chrom
 * Создайте следующие public методы:
   * `initialize()`
   * `end()`
-  * `get()`
+  * `getDriver()`
+* Задайте классу поле public WebDriver webDriver, которое будет инициализировано позже
 
-## Создайте 2 класса браузеров в пакете main.java.selenium. Пока мы рассмотрим Chrome и Firefox.
+## Создайте 2 класса браузеров в пакете main.java.selenium. Мы рассмотрим Chrome и Firefox.
 
 **`initialize()`** — инициализирует экземпляр WebDriver в соответствии с браузером (browser.name), который установлен в файле runConfiguration.properties. Создайте два приватных метода, которые возвращают объект WebDriver — createChromeDriver() и createFirefoxDriver(). Внутри этих двух методов вы создадите для начала соответствующие экземпляры ChromeDriver и FirefoxDriver.
 
@@ -53,7 +54,7 @@ Test your implementation in temporary main class: initialize() should open Chrom
 
 Если указана версия Selenium в файле конфигурации, используйте эту команду:
 
-`ChromeDriverManager.chromedriver().version (версия из файла runConfiguration.properties - selenium.version).setup();`
+`ChromeDriverManager.chromedriver().version(версия из файла runConfiguration.properties - selenium.version).setup();`
 
 Если не указана версия Selenium в файле конфигурации - пусть в методе будет это(будет взята последняя версия вебДрайвера):
 
@@ -63,13 +64,12 @@ Test your implementation in temporary main class: initialize() should open Chrom
 размером окна.
 
 И задайте неявное ожидание при помощи webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(**Введите свое кол-во секунд
-(рекомендую 10)*));
+(рекомендую 10)*)); Задайте длительность ожидания конфигурацией timeout в файле runConfiguration.class
 
-Строки выше фактически загружают файлы .exe для драйверов Selenium динамически.
+Строки выше фактически загружают файлы .exe для драйверов Selenium динамически c заданными параметрами.
 
-Некоторые полезные методы:
-
-**`end()`** - Выйти из текущего экземпляра WebDriver - закрыть браузер
+Остальные методы: 
+**`end()`** - Выйти из текущего экземпляра WebDriver - закрыть браузер. Поищите необходимую команду в документации
 
 **`get()`** — просто вернет экземпляр WebDriver, который хранится как частная переменная класса.
 
@@ -77,5 +77,5 @@ Test your implementation in temporary main class: initialize() should open Chrom
 инициализирован' (позже мы заменим все это системой логирования), и поместите комментарий после строки с выводом текста `//TODO: Change 
 with log4j logger`.
 
-Протестируйте свою реализацию во временном основном классе: initialize() должен открывать браузер Chrome или Firefox в соответствии со 
-значениями в файле свойств: размером браузера.
+Протестируйте свою реализацию во временном основном классе: initialize() должен открывать браузер Chrome или Firefox в 
+соответствии со значениями в файле свойств: размером браузера.
