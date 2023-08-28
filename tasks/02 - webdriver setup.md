@@ -35,7 +35,7 @@ NOTE: Add for now System.out.println("") lines of code on places where something
 Test your implementation in temporary main class: initialize() should open Chrome or Firefox browser according to values in properties file mentioned with browser size from file also.
 
 
-# Создать реализацию WebDriverFactory.class
+# Интеграция WebDriverManager из зависимости bonigarcia в класс WebDriverProvider
 
 Цель этого класса — предоставить удобные методы для настраиваемой инициализации WebDriver.
 
@@ -51,12 +51,14 @@ Test your implementation in temporary main class: initialize() should open Chrom
 **`initialize()`** — инициализирует экземпляр WebDriver в соответствии с браузером (browser.name), который установлен в файле runConfiguration.properties. Создайте два приватных метода, которые возвращают объект WebDriver — createChromeDriver() и createFirefoxDriver(). Внутри этих двух методов вы создадите для начала соответствующие экземпляры ChromeDriver и FirefoxDriver.
 
 ПРИМЕЧАНИЕ. Здесь вы будете использовать зависимость **bonigarcia**.
+См. документацию [WebDriverManager](https://github.com/bonigarcia/webdrivermanager/blob/master/README.md).
 
-Если указана версия Selenium в файле конфигурации, используйте эту команду:
+
+Если указана версия Selenium веб-драйвера в файле конфигурации, используйте эту команду:
 
 `ChromeDriverManager.chromedriver().version(версия из файла runConfiguration.properties - selenium.version).setup();`
 
-Если не указана версия Selenium в файле конфигурации - пусть в методе будет это(будет взята последняя версия вебДрайвера):
+Если не указана версия Selenium веб-драйвера в файле конфигурации - тогда в методе будет использована последняя версия вебДрайвера:
 
 `ChromeDriverManager.chromedriver().setup();`
 
