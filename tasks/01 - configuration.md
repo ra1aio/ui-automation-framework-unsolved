@@ -1,6 +1,6 @@
 # Integrate owner.aeonbits.org dependency and see maven checkstyle plugin
 
-Take a look at [Owner](http://owner.aeonbits.org/) documentation on how to create first Configuration classes.
+Take a look at [Owner](https://viclovsky.github.io/%D0%B0%D0%B2%D1%82%D0%BE%D1%82%D0%B5%D1%81%D1%82%D1%8B%20%D0%BD%D0%B0%20api/%D0%B0%D0%B2%D1%82%D0%BE%D1%82%D0%B5%D1%81%D1%82%D1%8B%20%D0%BD%D0%B0%20web/2018/08/23/owner/) documentation on how to create first Configuration classes.
 
 * For our purposes create two .properties files - put them in resources folder: environment.properties - with one parameter (Follow Java way of naming - e.g. homepage.url) that contains url of www.ae.com, runConfiguration.properties - put parameters - browser.name , browser.width , browser.height, selenium.version
 
@@ -22,7 +22,7 @@ You need to follow next rules:
 * Between variable declarations it is ok not to leave empty line
 
 # Интегрируйте зависимость owner.aeonbits.org и почитайте про плагин maven checkstyle
-Взгляните на документацию [Owner](http://owner.aeonbits.org/) о том, как создать первые классы конфигурации(зависимость уже есть в проекте).
+Взгляните на документацию Owner [тут](https://viclovsky.github.io/%D0%B0%D0%B2%D1%82%D0%BE%D1%82%D0%B5%D1%81%D1%82%D1%8B%20%D0%BD%D0%B0%20api/%D0%B0%D0%B2%D1%82%D0%BE%D1%82%D0%B5%D1%81%D1%82%D1%8B%20%D0%BD%D0%B0%20web/2018/08/23/owner/) или [тут](https://eliasnogueira.com/easily-manage-properties-files-in-java-with-owner/) о том, как создать первые классы конфигурации(зависимость уже есть в проекте).
 
 1. Для наших целей создайте два файла .properties — поместите их в папку ресурсов:
    - environment.properties — с одним параметром (следуйте способу именования Java — например, homepage.url), который содержит URL-адрес 
