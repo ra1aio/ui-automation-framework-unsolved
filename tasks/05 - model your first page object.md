@@ -32,7 +32,7 @@ You should follow following pattern in your page interfaces:
 онлайн-магазин). Создайте интерфейсы HomePage, SearchSidebar и SearchResultsPage в пакете main.java.htmlelements.pages. (В случае с 
 выбором Вашего сайта смоделируйте классы для главной страницы, страницы поиска и страницы с результатами поиска)
 
-Для идентификации элементов на тестируемой странице мы будем использовать XPath. Прочтите это [Учебное пособие по XPath] (https://www.w3schools.com/xml/xpath_intro.asp) и/или сыграйте в [Dinner locator game] (https://topswagcode .com/xpath/).
+Для идентификации элементов на тестируемой странице мы будем использовать XPath. Прочтите это [Учебное пособие по XPath] (https://www.w3schools.com/xml/xpath_intro.asp) и/или сыграйте в [Dinner locator game] (https://topswagcode.com/xpath/).
 
 Вы должны следовать следующему шаблону в интерфейсах вашей страницы:
 
