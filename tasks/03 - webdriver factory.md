@@ -1,11 +1,24 @@
-# Integrate WebDriverManager from bonigarcia dependency in WebDriverProvider class
+# WebDriverFactory.class realisation
 
-As mentioned in previous assignments use bonigarcia WebDriverManager to pull your WebDriver dynamically in your Сhrome and Firefox classes.
+1. Create a WebDriverFactory class in the same package as Chrome and Firefox files
 
-Create a WebDriverFactory class in the same package as the browser classes and create an initialize(String typeOfBrowser, String version) method in it,
-which will initialize the given browser with the required parameters
+2. Create the following public methods in it:
+   * `initialize(String typeOfBrowser, String version)`
+   * `end()`
+   * `getDriver()`
+3. Move the implementation of the initialize method and others from the Chrome and Firefox classes - only now the initialize method will return
+   required browser type depending on typeOfBrowser input parameter
 
-See [WebDriverManager](https://github.com/bonigarcia/webdrivermanager/blob/master/README.md) documentation.
+Write tests that will open a browser (optionally different browsers) with different parameters given
+
+# Create an implementation of WebDriverFactoryProvider.class
+
+Here you will get acquainted with the Singletone pattern - it allows you to operate on one entity of an object, not allowing to produce many of them -
+read about it on the Internet or [here] (https://habr.com/ru/articles/27108/)
+
+1. Create a class in the same package and name it WebDriverFactoryProvider (the class will be static)
+2. Create a private static WebDriverFactory INSTANCE field in the class; and public static WebDriverFactory getInstance() method
+3. Implement the return of the WebDriverFactory instance as a singleton pattern
 
 
 # Создать реализацию WebDriverFactory.class

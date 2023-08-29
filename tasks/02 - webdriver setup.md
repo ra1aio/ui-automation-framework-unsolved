@@ -35,9 +35,9 @@ NOTE: Add for now System.out.println("") lines of code on places where something
 Test your implementation in temporary main class: initialize() should open Chrome or Firefox browser according to values in properties file mentioned with browser size from file also.
 
 
-# Интеграция WebDriverManager из зависимости bonigarcia в класс WebDriverProvider
+# Интеграция WebDriverManager из зависимости bonigarcia в классы браузеров
 
-Цель этого класса — предоставить удобные методы для настраиваемой инициализации WebDriver.
+Цель — предоставить удобные методы для настраиваемой инициализации WebDriver.
 
 * Создайте этот класс в новом пакете с именем selenium в папке main.java.
 * Создайте следующие public методы:
