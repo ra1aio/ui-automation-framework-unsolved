@@ -11,6 +11,10 @@ repositories {
     mavenCentral()
 }
 
+test {
+    useJUnitPlatform()
+}
+
 dependencies {
     implementation 'org.apache.maven.plugins:maven-checkstyle-plugin:3.1.2'
     implementation 'org.seleniumhq.selenium:selenium-java:4.11.0'

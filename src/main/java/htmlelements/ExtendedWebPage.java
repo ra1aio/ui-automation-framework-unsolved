@@ -1,6 +1,9 @@
 package htmlelements;
 
 import org.hamcrest.Matcher;
+import org.openqa.selenium.WebDriver;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * This is a wrapper class to avoid issues.
@@ -8,7 +11,13 @@ import org.hamcrest.Matcher;
  */
 public abstract class ExtendedWebPage {
 
+    WebDriver driver;
+
     void isAt(Matcher<String> url) {
-        isAt(url);
+        //TODO: напишите метод проверки на какой странице мы находимся и сравнение этого с url - используйте assertEquals
+    }
+
+    public void openURL(String url) {
+        //TODO: Напишите реализацию метода, который будет открывать страницу с адресом url
     }
 }

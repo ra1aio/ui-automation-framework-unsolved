@@ -61,7 +61,7 @@ When you have performed search using product ID you are presented with search re
 Чтобы сделать наши тесты более читабельными, мы будем использовать упрощенный паттерн «builder» — каждый общедоступный метод класса шагов 
 будет возвращать this (экземпляр этого класса) — поэтому мы сможем «цеплять» вызовы шагов в наших тестах — это будет пояснено ниже.
 
-В OpenPageSteps.class реализация будет выглядеть примерно так:
+В HomePageSteps.class реализация будет выглядеть примерно так:
 
 ```java
 private static MyPageFactory pageFactory = MyPageFactoryProvider.getInstance();
@@ -89,10 +89,10 @@ public HomePageSteps acceptPrivacyModal() {
 ```
 
 Таким образом, шаг `acceptPrivacyModal()` ожидает отображения acceptPrivacyButton и щелкает по нему — первое, что вам нужно сделать, когда 
-открыта домашняя страница. Такой удобный способ исходит из депенденси html-elements.
+открыта домашняя страница.
 
 По заданному шаблону реализуйте метод `clickSearchButton()`. Учтите, что это - действие, осуществляемое со страницей поиска, а поэтому 
-должно быть имплементировано в соответствующем странице классе
+должно быть имплементировано в соответствующем классе
 
 В SearchSteps.class реализуйте методы:
 
@@ -104,4 +104,4 @@ public HomePageSteps acceptPrivacyModal() {
 убедиться, что присутствует только один продукт — используйте assertions JUnit, с которыми вы уже сталкивались в части модульного 
 тестирования. Метод для этого теста должен иметь сигнатуру:
 
-`public SearchSteps verifyNumberOfProductIsDisplayed (int numProducts);`
+`public SearchResultsPageSteps verifyNumberOfProductIsDisplayed (int numProducts);`
