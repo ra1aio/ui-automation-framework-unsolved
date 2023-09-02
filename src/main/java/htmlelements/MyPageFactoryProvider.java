@@ -12,5 +12,4 @@ public class MyPageFactoryProvider {
         }
         return INSTANCE;
     }
-
 }
