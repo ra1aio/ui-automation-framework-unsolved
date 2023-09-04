@@ -7,7 +7,7 @@ public class Main {
 
         WebDriverFactory webDriverFactory = WebDriverFactoryProvider.getInstance();
 
-        webDriverFactory.initialize("Chrome", "116.0.5845.96");
+        webDriverFactory.initialize( "Chrome", "116.0.5845.96");
         webDriverFactory.end();
         webDriverFactory.initialize("Firefox", "116.0.3");
         webDriverFactory.end();

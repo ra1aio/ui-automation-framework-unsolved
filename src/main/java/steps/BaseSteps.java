@@ -2,10 +2,10 @@ package steps;
 
 import htmlelements.MyPageFactory;
 import htmlelements.MyPageFactoryProvider;
-import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
@@ -15,9 +15,9 @@ public class BaseSteps {
 
     private static final WebDriver driver = pageFactory.getDriver();
 
-    protected Wait<WebDriver> waitFor = new FluentWait<>(driver)
-            .withTimeout(Duration.ofSeconds(5))
-            .pollingEvery(Duration.ofMillis(300))
-            .ignoring(ElementNotInteractableException.class);
-
+    protected WebElement waitUntilDisplayed(WebElement webElement) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.elementToBeClickable(webElement));
+        return webElement;
+    }
 }

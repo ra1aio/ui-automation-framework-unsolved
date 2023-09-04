@@ -1,14 +1,21 @@
 package steps;
 
-/*import htmlelements.pages.HomePage;
+import htmlelements.pages.HomePage;
+import tasks.ConfigObjectProvider;
 
 public class OpenPageSteps extends BaseSteps {
 
-    private HomePage homePage() { return pageFactory.on(HomePage.class); } // use .on method of MyPageFactoryProvider
+    ConfigObjectProvider configObjectProvider = new ConfigObjectProvider();
+
+    private HomePage homePage() {
+
+        return pageFactory.on(HomePage.class);
+    }
 
     public HomePageSteps openHomepage() {
-        pageFactory.getDriver().get("https://www.ae.com/us/en"); //TODO: реализуйте добавление значения URL через конфиг провайдер
+        pageFactory.getDriver().get(configObjectProvider.getHomepageUrl());
         System.out.println("Home page opened");
-        return new HomePageSteps();  *//*since homepage is opened after opening page, openHomepage() will give you access
-         to HomePageSteps*//* }
-}*/
+
+        return new HomePageSteps();
+    }
+}

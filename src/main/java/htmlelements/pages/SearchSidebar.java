@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class SearchSidebar extends ExtendedWebPage {
 
-    @Description("Кнопка открытия поиска")
+    @Description("Поле ввода для поиска")
     @FindBy(xpath = "//input[contains(@class, 'form-control form-control form-input-search')]")
     public WebElement inputSearch;
 
