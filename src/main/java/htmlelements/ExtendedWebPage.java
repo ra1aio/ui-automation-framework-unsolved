@@ -2,6 +2,8 @@ package htmlelements;
 
 import org.hamcrest.Matcher;
 import org.openqa.selenium.WebDriver;
+import selenium.WebDriverFactory;
+import selenium.WebDriverFactoryProvider;
 
 import static org.junit.Assert.assertEquals;
 
@@ -11,13 +13,13 @@ import static org.junit.Assert.assertEquals;
  */
 public abstract class ExtendedWebPage {
 
-    WebDriver driver;
+    WebDriver driver = WebDriverFactoryProvider.getInstance().getDriver();
 
     void isAt(Matcher<String> url) {
-        //TODO: напишите метод проверки на какой странице мы находимся и сравнение этого с url - используйте assertEquals
+        assertEquals(driver.getCurrentUrl(), url);
     }
 
-    public void openURL(String url) {
-        //TODO: Напишите реализацию метода, который будет открывать страницу с адресом url
+    public void openURL (String url) {
+        driver.get(url);
     }
 }
