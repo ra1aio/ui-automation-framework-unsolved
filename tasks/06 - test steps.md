@@ -83,16 +83,24 @@ private static MyPageFactory pageFactory = MyPageFactoryProvider.getInstance();
 private HomePage homePage() { return pageFactory.on(HomePage.class); }
 
 public HomePageSteps acceptPrivacyModal() {
-        homePage().acceptPrivacyButton().waitUntil(displayed()).click()
+        homePage().acceptPrivacyButton().click();
         return this;
         }
 ```
 
-Таким образом, шаг `acceptPrivacyModal()` ожидает отображения acceptPrivacyButton и щелкает по нему — первое, что вам нужно сделать, когда 
-открыта домашняя страница.
+Или же 
+```java
+public HomePageSteps acceptPrivacyModal() {
+        waitUntilDisplayed(homePage().acceptButton).click();
+        return this;
+```
+если хотите добавить дополнительное ожидание
 
-По заданному шаблону реализуйте метод `clickSearchButton()`. Учтите, что это - действие, осуществляемое со страницей поиска, а поэтому 
-должно быть имплементировано в соответствующем классе
+Таким образом, шаг `acceptPrivacyButton().click()` ожидает отображения acceptPrivacyButton и щелкает по нему — первое, что вам нужно 
+сделать, когда открыта домашняя страница.
+
+По заданному шаблону реализуйте метод `clickSearchButton()` и методы, которые позволят совершить это действие. Учтите, что это - действие, 
+осуществляемое со страницей поиска, а поэтому должно быть имплементировано в соответствующем классе
 
 В SearchSteps.class реализуйте методы:
 
