@@ -19,8 +19,8 @@ public class BaseTest {
         webDriverFactory.getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
     }
 
-    @AfterEach
+    /*@AfterEach
     public void endWebDriver() {
         webDriverFactory.end();
-    }
+    }*/
 }
