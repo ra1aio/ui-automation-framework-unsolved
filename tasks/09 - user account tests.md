@@ -20,7 +20,7 @@ NOTE 2: Use hardcoded values in steps that fill input fields.
 NOTE 3: Implement in this class also before and after steps for opening and closing browser.
 
 
-# Создать тесты для системы лояльности
+# Написать тесты системы лояльности
 
 Создайте новый файл CreateAccountTest.class в test.java и выполните тест:
 
