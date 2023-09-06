@@ -16,7 +16,7 @@ public class BaseSteps {
     private static final WebDriver driver = pageFactory.getDriver();
 
     protected WebElement waitUntilDisplayed(WebElement webElement) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(webElement));
         return webElement;
     }

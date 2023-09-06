@@ -20,4 +20,10 @@ public class HomePageSteps extends BaseSteps{
 
         return new SearchSteps();
     }
+
+    public LoginPageSteps clickOpenLoginPanelButton() {
+        homePage().openingAccountControlPanelButton.click();
+
+        return new LoginPageSteps();
+    }
 }

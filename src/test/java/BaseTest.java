@@ -8,7 +8,7 @@ import java.time.Duration;
 
 public class BaseTest {
 
-    private static final ConfigObjectProvider cfg = new ConfigObjectProvider();
+    static final ConfigObjectProvider cfg = new ConfigObjectProvider();
 
     private static WebDriverFactory webDriverFactory = WebDriverFactoryProvider.getInstance();
 
@@ -19,8 +19,8 @@ public class BaseTest {
         webDriverFactory.getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
     }
 
-    @AfterEach
+    /*@AfterEach
     public void endWebDriver() {
         webDriverFactory.end();
-    }
+    }*/
 }
