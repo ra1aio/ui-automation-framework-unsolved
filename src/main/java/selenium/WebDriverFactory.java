@@ -12,15 +12,18 @@ public class WebDriverFactory {
 
     ConfigObjectProvider cfg = new ConfigObjectProvider();
 
-    public void initialize(String typeBrowser, String version) {
-        if (typeBrowser.equals("Chrome")) {
+    public void initialize(String typeOfBrowser, String version) {
+
+        if (typeOfBrowser.equals("Chrome")) {
             webDriver = Chrome.getWebDriver(version);
             webDriverSetup();
-        } else if (typeBrowser.equals("Firefox")) {
+        }
+        if (typeOfBrowser.equals("Firefox")) {
             webDriver = Firefox.getWebDriver(version);
             webDriverSetup();
-        } else {
-            System.out.println("Web-driver not set up");
+        }
+        if (webDriver == null) {
+            System.out.println("WebDriver not set up"); //TODO: Change with log4j logger
         }
     }
 
@@ -37,6 +40,6 @@ public class WebDriverFactory {
     private void webDriverSetup() {
         webDriver.manage().window().setSize(new Dimension(cfg.getBrowserWidth(), cfg.getBrowserHeight()));
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(cfg.getTimeout()));
-        System.out.println("Web-driver set up");
+        System.out.println("Web-driver set up"); //TODO: Change with log4j logger
     }
 }

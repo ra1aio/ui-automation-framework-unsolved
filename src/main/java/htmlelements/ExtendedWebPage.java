@@ -2,7 +2,6 @@ package htmlelements;
 
 import org.hamcrest.Matcher;
 import org.openqa.selenium.WebDriver;
-import selenium.WebDriverFactory;
 import selenium.WebDriverFactoryProvider;
 
 import static org.junit.Assert.assertEquals;
@@ -19,7 +18,10 @@ public abstract class ExtendedWebPage {
         assertEquals(driver.getCurrentUrl(), url);
     }
 
-    public void openURL (String url) {
+    public void openURL(String url) {
+        if (driver == null) {
+            throw new IllegalStateException("Driver is not initialized");
+        }
         driver.get(url);
     }
 }

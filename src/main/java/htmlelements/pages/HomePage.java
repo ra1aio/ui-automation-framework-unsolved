@@ -8,9 +8,9 @@ import org.openqa.selenium.support.FindBy;
 public class HomePage extends ExtendedWebPage {
 
 
-    @Description("Модальное окно о принятии печенек")
-    @FindBy(xpath = "//div[@class='ot-sdk-container']")
-    public WebElement modalWindowAcceptCookies;
+    @Description("Кнопка о принятии cookies")
+    @FindBy(xpath = "//div[@class='banner-actions-container']/button[@id='onetrust-accept-btn-handler']")
+    public WebElement acceptCookiesButton;
 
     @Description("Кнопка входа в аккаунт")
     @FindBy(xpath = "//a[@class='clickable qa-show-sidetray-account sidetray-account']")
