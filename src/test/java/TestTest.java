@@ -25,6 +25,6 @@ public class TestTest extends BaseTest{
                 .clickSearchButton()
                 .inputSearchString("0195")
                 .clickSearchButton()
-                .verifySearchResult();
+                .verifySearchResultNotEmpty();
     }
 }

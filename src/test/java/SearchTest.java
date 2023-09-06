@@ -17,7 +17,7 @@ public class SearchTest extends BaseTest{
     }
 
     @Test
-    @Description("Поиск заранее известного количества")
+    @Description("Поиск заранее не известного количества")
     void searchForAnUnknownQuantityInAdvance() {
         new OpenPageSteps()
                 .openHomepage()
@@ -25,6 +25,6 @@ public class SearchTest extends BaseTest{
                 .clickSearchButton()
                 .inputSearchString("0195")
                 .clickSearchButton()
-                .verifySearchResult();
+                .verifySearchResultNotEmpty();
     }
 }
