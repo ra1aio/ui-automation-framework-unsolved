@@ -8,7 +8,7 @@ import java.time.Duration;
 
 public class BaseTest {
 
-    private static final ConfigObjectProvider cfg = new ConfigObjectProvider();
+    static final ConfigObjectProvider cfg = new ConfigObjectProvider();
 
     private static WebDriverFactory webDriverFactory = WebDriverFactoryProvider.getInstance();
 
