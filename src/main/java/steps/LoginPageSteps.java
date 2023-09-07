@@ -16,6 +16,12 @@ public class LoginPageSteps extends BaseSteps{
         return this;
     }
 
+    public CreateAccountSteps clickCreateAccountButton() {
+        loginSidebarPage().createAccountButton.click();
+
+        return new CreateAccountSteps();
+    }
+
     public LoginPageSteps inputLoginAndPass(String email, String password) {
         loginSidebarPage().emailInputField.sendKeys(email);
         loginSidebarPage().passwordInputField.sendKeys(password);
