@@ -11,6 +11,10 @@ public class LoginSidebarPage extends ExtendedWebPage {
     @FindBy(xpath = "//button[@class='btn btn-secondary qa-btn-signin   btn-sm btn-action']")
     public WebElement singInButton;
 
+    @Description("Кнопка создания аккаунта")
+    @FindBy(xpath = "//a[@class='ember-view btn btn-sm btn-secondary qa-btn-register btn-action']")
+    public WebElement createAccountButton;
+
     @Description("Поле ввода email")
     @FindBy(xpath = "//input[@class='form-control form-control form-input-username']")
     public WebElement emailInputField;
