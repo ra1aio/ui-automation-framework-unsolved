@@ -12,9 +12,9 @@ public class HomePage extends ExtendedWebPage {
     @FindBy(xpath = "//div[@class='banner-actions-container']/button[@id='onetrust-accept-btn-handler']")
     public WebElement acceptCookiesButton;
 
-    @Description("Кнопка входа в аккаунт")
+    @Description("Кнопка открытия панели управления аккаунтом")
     @FindBy(xpath = "//a[@class='clickable qa-show-sidetray-account sidetray-account']")
-    public WebElement accountButton;
+    public WebElement openingAccountControlPanelButton;
 
     @Description("Кнопка поиска")
     @FindBy(xpath = "//a[@class='clickable qa-show-sidetray-search sidetray-search']")
