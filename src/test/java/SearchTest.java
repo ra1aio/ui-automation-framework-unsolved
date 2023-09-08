@@ -2,7 +2,7 @@ import jdk.jfr.Description;
 import org.junit.jupiter.api.Test;
 import steps.OpenPageSteps;
 
-public class TestTest extends BaseTest{
+public class SearchTest extends BaseTest{
 
     @Test
     @Description("Поиск заранее известного количества")
@@ -17,7 +17,7 @@ public class TestTest extends BaseTest{
     }
 
     @Test
-    @Description("Поиск заранее известного количества")
+    @Description("Поиск заранее не известного количества")
     void searchForAnUnknownQuantityInAdvance() {
         new OpenPageSteps()
                 .openHomepage()

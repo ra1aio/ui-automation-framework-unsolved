@@ -10,6 +10,6 @@ import java.util.List;
 public class SearchResultsPage extends ExtendedWebPage {
 
     @Description("Список результатов поиска")
-    @FindBy(xpath = "//div[@class='results-list qa-search-results-list']")
+    @FindBy(xpath = "//div[@class='product-tile qa-product-tile __eadf2']")
     public List<WebElement> searchResultList;
 }

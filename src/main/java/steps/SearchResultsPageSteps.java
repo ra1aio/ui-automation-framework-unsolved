@@ -11,14 +11,14 @@ public class SearchResultsPageSteps extends BaseSteps{
         return pageFactory.on(SearchResultsPage.class);
     }
 
-    public SearchResultsPageSteps verifySearchResult() {
-        assertTrue(!searchResultsPage().searchResultList.isEmpty());
+    public SearchResultsPageSteps verifySearchResultNotEmpty() {
+        assertFalse(searchResultsPage().searchResultList.isEmpty());
 
         return this;
     }
 
     public SearchResultsPageSteps verifySearchResult(int expectedQuantity) {
-        assertEquals(searchResultsPage().searchResultList.size(), expectedQuantity);
+        assertEquals(expectedQuantity, searchResultsPage().searchResultList.size());
 
         return this;
     }
