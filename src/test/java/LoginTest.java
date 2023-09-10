@@ -13,8 +13,8 @@ public class LoginTest extends BaseTest{
     void successfulLogin() {
         new OpenPageSteps()
                 .openHomepage()
-                .refreshPage()
                 .acceptPrivacyModal()
+                .refreshPage()
                 .clickOpenLoginPanelButton()
                 .clickSingInButton()
                 .inputLoginAndPass(cfg.getEmail(), cfg.getPassword())

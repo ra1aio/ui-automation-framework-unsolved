@@ -1,3 +1,5 @@
+import main.ScenarioContext;
+import main.ScenarioContextProvider;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import selenium.WebDriverFactory;
@@ -12,6 +14,8 @@ public class BaseTest {
 
     private static WebDriverFactory webDriverFactory = WebDriverFactoryProvider.getInstance();
 
+    public ScenarioContext scenarioContext = ScenarioContextProvider.getInstance();
+
     @BeforeEach
     public void setUpWebDriver() {
         webDriverFactory.initialize(cfg.getBrowser(), cfg.getChromeDriver());
@@ -21,6 +25,7 @@ public class BaseTest {
 
     @AfterEach
     public void endWebDriver() {
+        scenarioContext.removeAll();
         webDriverFactory.end();
     }
 }

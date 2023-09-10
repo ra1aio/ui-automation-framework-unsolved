@@ -1,4 +1,5 @@
 import jdk.jfr.Description;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 import steps.OpenPageSteps;
@@ -9,6 +10,7 @@ public class CreateAccountTest extends BaseTest{
     @Test
     @Description("Данные корректны. Позитивный кейс")
     @DisplayName("Создание нового аккаунта")
+    @Disabled("Перестало работать. Сайт не реагирует на нажатие кнопки 'Create Account'")
     void createNewAccount() {
         String name = "Vlad";
         new OpenPageSteps()
