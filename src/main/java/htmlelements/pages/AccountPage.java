@@ -11,7 +11,7 @@ public class AccountPage extends ExtendedWebPage {
     @FindBy(xpath = "//div[@class='text-bold qa-list-menu-header _account-menu-header_1g7qxv']")
     public WebElement accountName;
 
-    @Description("Иконка аккаунта")
+    @Description("Account icon")
     @FindBy(xpath = "aeo-icon aeo-icon-account _header-icon-default_1eddlt")
     public WebElement accountIcon;
 }

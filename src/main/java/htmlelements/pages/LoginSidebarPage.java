@@ -29,7 +29,7 @@ public class LoginSidebarPage extends ExtendedWebPage {
 
     @Description("Заголовок окна после успешного входа")
     @FindBy(xpath = "//h2[@class='modal-title']")
-    public  WebElement windowTitleAfterSuccessfulLogin;
+    public WebElement windowTitleAfterSuccessfulLogin;
 
     @Description("Кнопка выхода из личного кабинета")
     @FindBy(xpath = "//div[@class='modal-body']/button[@class='btn btn-secondary    btn-sign-out']")

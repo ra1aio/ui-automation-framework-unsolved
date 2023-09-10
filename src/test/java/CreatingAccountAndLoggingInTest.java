@@ -11,7 +11,7 @@ public class CreatingAccountAndLoggingInTest extends BaseTest{
 
     @Description("Создание нового аккаунта и в ход в него с помощью scenarioContext")
     @Test
-    @DisplayName("Создание аккаунта. Вход в него. Используется scenarioContext")
+    @DisplayName("Создание аккаунта. Вход в него. используется scenarioContext")
     @Disabled("Регистрация новых аккаунтов тоже перестала работать через тесты. Поэтому данный тест тоже падает")
     void creatingAccountAndLoggingInTestWithScenarioContext() {
         scenarioContext.put(EMAIL, RandomUtils.getEmail("gmail.com"));
