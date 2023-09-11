@@ -2,8 +2,6 @@ import main.ScenarioContext;
 import main.ScenarioContextProvider;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import selenium.WebDriverFactory;
 import selenium.WebDriverFactoryProvider;
 import tasks.ConfigObjectProvider;

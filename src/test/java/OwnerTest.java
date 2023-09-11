@@ -1,8 +1,7 @@
 import configInterface.EnvironmentConfiguration;
 import configInterface.RunConfiguration;
 import org.aeonbits.owner.ConfigFactory;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import tasks.ConfigObjectProvider;
 
 public class OwnerTest {
@@ -10,8 +9,7 @@ public class OwnerTest {
     ConfigObjectProvider cop = new ConfigObjectProvider();
 
     @Test
-    @DisplayName("Проверка работоспособности класса ConfigObjectProvider")
-    void checkConfigObjectProvider() {
+    public void checkConfigObjectProvider() {
         RunConfiguration cfgRun = ConfigFactory.create(RunConfiguration.class);
         EnvironmentConfiguration cfgEnv = ConfigFactory.create(EnvironmentConfiguration.class);
 
@@ -26,8 +24,7 @@ public class OwnerTest {
     }
 
     @Test
-    @DisplayName("Проверка работоспособности метода collectAllToString")
-    void checkMethodCollectAllToString() {
+    public void checkMethodCollectAllToString() {
         System.out.println(cop.collectAllToString());
     }
 }

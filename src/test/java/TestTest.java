@@ -1,12 +1,12 @@
 import jdk.jfr.Description;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import steps.OpenPageSteps;
 
 public class TestTest extends BaseTest{
 
     @Test
     @Description("Поиск заранее известного количества")
-    void searchForPreKnownQuantity() {
+    public void searchForPreKnownQuantity() {
         new OpenPageSteps()
                 .openHomepage()
                 .acceptPrivacyModal()
@@ -18,7 +18,7 @@ public class TestTest extends BaseTest{
 
     @Test
     @Description("Поиск заранее известного количества")
-    void searchForAnUnknownQuantityInAdvance() {
+    public void searchForAnUnknownQuantityInAdvance() {
         new OpenPageSteps()
                 .openHomepage()
                 .acceptPrivacyModal()
