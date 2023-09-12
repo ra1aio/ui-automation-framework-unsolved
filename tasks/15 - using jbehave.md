@@ -234,9 +234,10 @@ Then используется для подтверждения некоторо
   </executions>
   <dependencies>
     <dependency>
-      <groupId>org.codehaus.groovy</groupId>
+      <groupId>org.apache.groovy</groupId>
       <artifactId>groovy-all</artifactId>
-      <version>2.4.15</version>
+      <version>4.0.14</version>
+      <type>pom</type>
     </dependency>
   </dependencies>
 </plugin>
