@@ -56,7 +56,7 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <configuration>
                         <includes>
-                            <include>SmokeSuite</include>
+                            <include>${runSuite}}</include>
                         </includes>
                     </configuration>
                 </plugin>

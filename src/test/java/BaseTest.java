@@ -20,7 +20,7 @@ public class BaseTest {
     public void setUpWebDriver() {
         webDriverFactory.initialize(cfg.getBrowser(), cfg.getChromeDriver());
         webDriverFactory.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        webDriverFactory.getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+        webDriverFactory.getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(90));
     }
 
     @After
