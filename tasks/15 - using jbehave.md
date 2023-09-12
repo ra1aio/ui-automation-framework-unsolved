@@ -159,7 +159,8 @@ So you can make story paths you want to run configurable also - Notice that you 
 
 ПРИМЕЧАНИЕ. Файлы story поместите в папку src.main.resources.stories.
 
-* `public org.jbehave.core.configuration.Configuration Configuration()` — здесь вы должны настроить структуру JBehave — вы должны вернуть объект `MostUsefulConfiguration()`, настроенный с помощью методов:
+* `public org.jbehave.core.configuration.Configuration configuration()` — здесь вы должны настроить структуру JBehave — вы должны 
+  вернуть объект `MostUsefulConfiguration()`, настроенный с помощью методов:
 
   * useStoryLoader()
   * useStoryReporterBuilder()
@@ -200,7 +201,7 @@ Then используется для подтверждения некоторо
 
 ## Шаг 4. Создайте новые файлы .story в папке src.main.resources.stories.
 
-Следуйте синтаксису истории JBehave. Что-то вроде https://jbehave.org/reference/stable/story-syntax.html. Реализуйте все тесты, которые у вас есть в JUnit.
+Следуйте синтаксису истории JBehave. Что-то вроде https://jbehave.org/reference/stable/story-syntax.html. Реализуйте несколько тестов, которые у вас есть в JUnit.
 
 ## Шаг 5. Рефакторинг аннотаций JUnit «До» и «После» в аннотации, совместимые с JBehave
 
