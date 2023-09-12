@@ -147,8 +147,9 @@ So you can make story paths you want to run configurable also - Notice that you 
 
 ## Шаг 1: Установите плагин JBehave в свою IDEA
 
-Это сделает файлы .story, содержащие тестовую реализацию, видимыми для IDE. Перейдите file -> settings -> plugins найдите плагин поддержки
-синтаксиса JBehave новейшей версии (версия может отличаться в зависимости от вашей версии IDEA).
+Это сделает файлы .story, содержащие тестовую реализацию, читаемыми для IDE. Перейдите Intellij IDEA -> settings -> plugins найдите плагин 
+поддержки
+синтаксиса JBehave Support новейшей версии (версия может отличаться в зависимости от вашей версии IDEA).
 
 ## Шаг 2. Создайте класс JBehaveStoriesRunner в пакете src.main.java.framework — этот класс должен наследовать(extend) абстрактный класс JUnitStories
 
