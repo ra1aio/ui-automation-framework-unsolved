@@ -36,7 +36,7 @@ NOTE 3: Implement in this class also before and after steps for opening and clos
 Вам нужно будет добавить еще несколько объектов страницы со своими элементами.
 
 ПРИМЕЧАНИЕ 1. Для шага 5 вам необходимо создать уникальный email для каждого сценария. Создайте RandomUtils.class в src.main.java.utils и 
-реализуйте статический метод String generateRandomEmail (String domain) , где domain будет доменом, который идет после символа @.
+реализуйте статический метод String generateRandomEmail(String domain), где domain будет доменом, который идет после символа @.
 
 ПРИМЕЧАНИЕ 2. Используйте свои заданные значения в шагах заполнения полей ввода.
 
